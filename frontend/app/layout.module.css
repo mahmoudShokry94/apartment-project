@@ -1,0 +1,7 @@
+.content[class~="ant-layout-content"]{
+    background-color: white;
+}
+
+.header[class~="ant-layout-header"]{
+    background-color: white;
+}

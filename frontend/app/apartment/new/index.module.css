@@ -1,0 +1,36 @@
+.card{
+    margin: auto;
+    width: 70%;
+    margin-block-start: 3rem;
+}
+.card [class~="ant-form"]{
+    width: 100%;
+}
+
+.card [class~="ant-row"]{
+    margin-block-start: .375rem;
+}
+ .card [class~="ant-form-item"]{
+    width: 100%;
+    margin-inline: auto;
+}
+.card [class~="ant-input-number"],
+.card [class~="ant-select"]{
+    width: 100% !important;
+
+}
+.button-container[class~="ant-row"]{
+    margin-block-start: 2rem;
+    width: 100%;
+}
+
+.button-container[class~="ant-row"]  [class~="ant-col"]{
+    text-align: end;
+}
+
+@media (max-width: 768px) {
+    .card {
+      width: 98%;
+    }
+  }
+  

@@ -1,0 +1,15 @@
+.table-wrapper{
+  width:70%;
+  margin: auto;
+  margin-block-start: 5rem;
+}
+
+.table{
+  margin-block-start: 1rem;
+}
+
+@media (max-width: 768px) {
+  .table-wrapper {
+    width: 98%;
+  }
+}
