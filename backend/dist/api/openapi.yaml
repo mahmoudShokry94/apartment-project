@@ -1,0 +1,157 @@
+openapi: 3.1.0
+info:
+    version: 1.0.0
+    title: Sample API
+servers:
+    - url: http://127.0.0.1:8080
+      description: Development server
+tags:
+    - name: Apartment
+      description: Apartment API's
+paths:
+  /apartments:
+    post:
+      tags:
+        - Apartment
+      summary: Insert an Apartment.
+      description: Insert an Apartment
+      operationId: insertApartment
+      x-eov-operation-handler: apartments
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/InsertApartmentRequestBody'    
+      responses:
+        "201":
+          description: A List Of Apartments
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InsertApartmentsResponse'
+    get:
+      tags:
+        - Apartment
+      summary: Search a Apartments.
+      description: Search Apartments with Pagination.
+      operationId: getApartments
+      x-eov-operation-handler: apartments
+      parameters:
+        - in: query
+          name: pageIndex
+          schema:
+            type: integer
+        - in: query
+          name: pageSize
+          schema:
+            type: integer
+        - in: query
+          name: projectName
+          schema:
+            type: string
+      responses:
+        "200":
+          description: A List Of Apartments
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetApartmentsResponse'
+  /apartments/{id}:
+    get:
+      tags:
+        - Apartment
+      summary: Get Apartment by ID.
+      description: Get Apartment by ID.
+      operationId: getApartmentById
+      x-eov-operation-handler: apartments
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
+            format: uuid
+      responses:
+        "200":
+          description: Apartment is returned successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetApartmentResponse'
+components:
+  schemas:
+    GetApartmentsResponse:
+      type: object
+      properties:
+        message:
+          type: string
+        data:
+          type: object
+          properties:
+            resultReport:
+              $ref: '#/components/schemas/ResultReport'
+            results:
+              $ref: '#/components/schemas/Apartment'
+    InsertApartmentsResponse:
+      type: object
+      properties:
+        message:
+          type: string
+        data:
+          type: object
+          additionalProperties: false
+          properties:
+            apartmentId:
+              type: string
+    GetApartmentResponse:
+      type: object
+      properties:
+        message:
+          type: string
+        data:
+          $ref: '#/components/schemas/Apartment'
+    ResultReport:
+      type: object
+      additionalProperties: false
+      properties:
+        pageIndex:
+          type: integer
+        pageSize:
+          type: integer
+        totalCount:
+          type: integer
+    Apartment:
+      type: object
+      additionalProperties: false
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        projectName:
+          type: string
+        area:
+          type: integer
+        floorNumber:
+          type: integer
+        price:
+          type: integer
+        propertyType:
+          type: string
+    InsertApartmentRequestBody:
+      type: object
+      additionalProperties: false
+      properties:
+        name:
+          type: string
+        projectName:
+          type: string
+        area:
+          type: integer
+        floorNumber:
+          type: integer
+        price:
+          type: integer
+        propertyType:
+          type: string

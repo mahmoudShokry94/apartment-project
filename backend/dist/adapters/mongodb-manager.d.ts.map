@@ -1,0 +1,1 @@
+{"version":3,"file":"mongodb-manager.d.ts","sourceRoot":"","sources":["../../src/adapters/mongodb-manager.ts"],"names":[],"mappings":"AAAA,OAAO,QAAQ,MAAM,UAAU,CAAC;AAQhC,eAAO,MAAM,MAAM;UACT,OAAO,GAAG,IAAI;WACb,IAAI,QAAQ,SAAS,UAAU,GAAG,IAAI;mBAoBhD,CAAC;AAEF,eAAO,MAAM,eAAe,2BAE3B,CAAC"}

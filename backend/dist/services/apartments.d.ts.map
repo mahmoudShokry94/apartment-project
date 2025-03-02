@@ -1,0 +1,1 @@
+{"version":3,"file":"apartments.d.ts","sourceRoot":"","sources":["../../src/services/apartments.ts"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;AAEA,OAAO,SAAS,MAAM,oBAAoB,CAAC;AAE3C,eAAO,MAAM,aAAa;eAKb,MAAM;cACP,MAAM;iBACH,MAAM;kBAOpB,CAAC;AAEF,eAAO,MAAM,eAAe,YACjB,SAAS;;;;;;;;;;;;;;;;;;;;;;;;UAKnB,CAAC;AAEF,eAAO,MAAM,gBAAgB,OAAc,MAAM;;;;;;;;;;;;;;;;;;;;;;;;UAUhD,CAAC"}
